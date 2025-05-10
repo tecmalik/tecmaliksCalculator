@@ -10,7 +10,6 @@ func main() {
 
 }
 func calculator(expression string) string {
-	answer := ""
 	if expression == "" {
 		return "0"
 	}
@@ -35,23 +34,20 @@ func calculator(expression string) string {
 	if strings.Contains(noSpaceExpression, "%%") {
 		return "invalid syntax"
 	}
-	if len(noSpaceExpression) <= 2{
+	if len(noSpaceExpression) <= 2 {
 		return noSpaceExpression
 	}
-	if[ ]
+	if !strings.Contains(noSpaceExpression, "%") || !strings.Contains(noSpaceExpression, "*") || !strings.Contains(noSpaceExpression, "/") || !strings.Contains(noSpaceExpression, "-") || !strings.Contains(noSpaceExpression, "+") {
+		return noSpaceExpression
+	}
 
 	noSpaceExpression = multiply(noSpaceExpression)
-	noSpaceExpression =	divide(noSpaceExpression)
+	noSpaceExpression = divide(noSpaceExpression)
 	noSpaceExpression = modulus(noSpaceExpression)
 	noSpaceExpression = add(noSpaceExpression)
 	noSpaceExpression = subtract(noSpaceExpression)
 
 	return noSpaceExpression
-
-	}
-	// 4+7-9  = 12
-
-	return answer
 }
 
 func add(expression string) string {
