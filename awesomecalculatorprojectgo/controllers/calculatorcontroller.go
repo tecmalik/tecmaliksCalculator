@@ -1,5 +1,11 @@
 package main
 
-func evaluate(expression string) int {
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
 
+func postEvaluate(expression *gin.Context) string {
+	expression.IndentedJSON(http.StatusOK, expression)
+	return ""
 }
