@@ -35,13 +35,18 @@ func calculator(expression string) string {
 	if strings.Contains(noSpaceExpression, "%%") {
 		return "invalid syntax"
 	}
-	//if
-	add(noSpaceExpression)
+	if len(noSpaceExpression) <= 2{
+		return noSpaceExpression
+	}
+	if[ ]
 
-	//if expression {
-	//}
-	//operator := [5]byte{'*', '/', '%', '+', '-'}
-	for count := 0; count < len(expression); count++ {
+	noSpaceExpression = multiply(noSpaceExpression)
+	noSpaceExpression =	divide(noSpaceExpression)
+	noSpaceExpression = modulus(noSpaceExpression)
+	noSpaceExpression = add(noSpaceExpression)
+	noSpaceExpression = subtract(noSpaceExpression)
+
+	return noSpaceExpression
 
 	}
 	// 4+7-9  = 12
