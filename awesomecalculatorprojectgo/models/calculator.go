@@ -6,13 +6,12 @@ import (
 	"unicode"
 )
 
-tupe calculator Struct{
-//func main() {
-//
-//}
-func calculator(expression string) string {
-  	value string json `json:"value"`
+func main() {
+
 }
+func calculate(expression string) string {
+	//value string json `json:"value"`
+
 	if expression == "" {
 		return "0"
 	}
