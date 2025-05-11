@@ -7,8 +7,10 @@ import (
 )
 
 func main() {
-
 }
+
+// type calculator struct {
+// }
 func calculate(expression string) string {
 	//value string json `json:"value"`
 
@@ -85,7 +87,6 @@ func add(expression string) string {
 			expression = strings.Replace(expression, initialNumberString, addedNumberString, 1)
 			index = 0
 		}
-
 	}
 	return expression
 }
