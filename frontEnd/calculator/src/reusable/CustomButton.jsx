@@ -3,7 +3,7 @@ import React from "react";
 const CustomButton = (props) =>{
    return( 
    <div>
-    <button> {props.text} </button>
+    <button className = 'button'>  {props.text} </button>
 
     </div>
    )
