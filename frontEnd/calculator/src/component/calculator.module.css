@@ -13,38 +13,47 @@ button{
 .display{
     background-color:rgb(43, 40, 40);
     height: 20px;
-    width: 378px; 
+    width: 386px; 
     height: 50px;
     color:white;
     text-align: right;
     padding-right: 20px; 
 
-   
+}
+h1{
+    padding-top: 6px;
+
 }
 .firstRow{
     display : flex;
     padding-top: 2px;
-    padding-bottom: 2px ;
+    padding-bottom: 1px ;
+    gap: 2px;
+    
 }
 .secondRow{
     display : flex;
     padding-top: 2px;
-    padding-bottom: 2px ;
+    padding-bottom: 1px ;
+    gap: 2px;
 }
 .thirdRow{
     display : flex;
     padding-top: 2px;
-    padding-bottom: 2px ;
+    padding-bottom: 1px;
+    gap: 2px;
 }
 .forthRow{
     display : flex;
     padding-top: 2px;
-    padding-bottom: 2px ;
+    padding-bottom: 1px ;
+    gap: 2px;
 }
 .lastRow{
     display : flex;
     justify-content: center;
-    padding-top: 2px;
+    padding-top: 1px;
+    gap: 2px;
 }
 .wrapper{
     justify-items : center;
@@ -57,6 +66,8 @@ button{
     justify-items: center;
 }
 .lastButton{
-    width: 400px;
-    
+    width: 409px;
+}
+.cancel{
+    background-color: rgb(170, 42, 42);
 }
