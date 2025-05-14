@@ -1,22 +1,38 @@
 import React from 'react'
 import style from './calculator.module.css'
 import CustomButton from '../reusable/CustomButton'
+import {useState} from 'react'
 
 
 
-const Calculator = () =>{
-    const Value = 0
+const Calculator=()=>{
+
+    const [value, setValue] = useState('0');
+
+
+    const handleAddNumber = (e,number) =>{
+        e.preventDefault();
+        console.log("current value"+ value)
+        if (value === '0'){
+            console.log(value)
+            setValue(number);
+        }else{
+             setValue(prevValue => prevValue + number);
+        }
+            
+    };
+
 
     return(
         <div id ={style.wrapper}>
             <form className = {style.calculatorBody}>
                 <div className = {style.display}>
-                    <h1>0</h1>
+                    <h1>{value}</h1>
                 </div>
                 <div className = {style.body}>
                     <div className = {style.firstRow}>
-                        <CustomButton text ='1'/>
-                        <CustomButton text ='2'/>
+                        <CustomButton onClick = {() => handleAddNumber('1')} text ='1' />
+                        <CustomButton onClick = {() => handleAddNumber('2')} text ='2'/>
                         <CustomButton text ='3'/>
                         <CustomButton text ='+'/>
                     </div>
@@ -39,8 +55,8 @@ const Calculator = () =>{
                         <CustomButton text ='C'/>
                     </div>
                     <div className={style.lastRow}>
-                        {/* <CustomButton text ='='/> */}
-                        <button className = {style.lastButton}>=</button>
+                    
+                        <button className = {style.lastButton } > =</button>
                         
                     </div>
 
@@ -56,5 +72,5 @@ const Calculator = () =>{
     )
     
 
-}
-export default Calculator
+};
+export default Calculator;
