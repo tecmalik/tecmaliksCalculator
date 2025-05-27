@@ -1,11 +1,15 @@
 
 import Calculator from "./component/Calculator"
+import router from './routers/routes';
+import {RouterProvider} from "react-router"
+
 
 function App() {
 
   return (
     <>
-      <Calculator/>
+    <RouterProvider router ={router}/>
+      {/* <Calculator/> */}
     </>
   )
 }

@@ -6,9 +6,6 @@ import (
 	"unicode"
 )
 
-func main() {
-}
-
 // type calculator struct {
 // }
 func calculate(expression string) string {
@@ -24,20 +21,37 @@ func calculate(expression string) string {
 	}
 	noSpaceExpression := strings.ReplaceAll(expression, " ", "")
 	if strings.Contains(noSpaceExpression, "++") {
-		return "invalid syntax"
+		return "invalid syntax, wait for upgrade"
 	}
 	if strings.Contains(noSpaceExpression, "--") {
 		return "invalid syntax"
 	}
 	if strings.Contains(noSpaceExpression, "//") {
-		return "invalid syntax"
+		return "invalid syntax, wait for upgrade"
 	}
 	if strings.Contains(noSpaceExpression, "**") {
-		return "invalid syntax"
+		return "invalid syntax, wait for upgrade"
 	}
 	if strings.Contains(noSpaceExpression, "%%") {
+		return "invalid syntax, wait for upgrade"
+	}
+
+	if strings.Contains(noSpaceExpression, "+-") {
+		return "invalid syntax, wait for upgrade"
+	}
+	if strings.Contains(noSpaceExpression, "-+") {
 		return "invalid syntax"
 	}
+	if strings.Contains(noSpaceExpression, "/-") {
+		return "invalid syntax, wait for upgrade"
+	}
+	if strings.Contains(noSpaceExpression, "*-") {
+		return "invalid syntax, wait for upgrade"
+	}
+	if strings.Contains(noSpaceExpression, "%+") {
+		return "invalid syntax, wait for upgrade"
+	}
+
 	if len(noSpaceExpression) <= 2 {
 		return noSpaceExpression
 	}

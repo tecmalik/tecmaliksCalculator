@@ -2,12 +2,14 @@ import React from 'react'
 import style from './calculator.module.css'
 import CustomButton from '../reusable/CustomButton'
 import {useState} from 'react'
+import { useCalculateMutation } from '../service/userCalculatorApi';
 
 
 
 const Calculator=()=>{
 
     const [value, setValue] = useState('0');
+    const [calculate,{isloading,isError}] = useCalculateMutation();
 
 
     const handleAddNumber = (number) =>{
@@ -26,8 +28,15 @@ const Calculator=()=>{
         setValue('0');
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault();
+        try{
+            const response = await calculate(value).unwrap();
+            console.log(response)
+            
+        }catch(error){
+            console.log(error)
+        }
     }
 
 
@@ -65,7 +74,7 @@ const Calculator=()=>{
                     </div>
                     <div className={style.lastRow}>
                     
-                        <button className = {style.lastButton } > =</button>
+                        <button className = {style.lastButton} > =</button>
                         
                     </div>
 
